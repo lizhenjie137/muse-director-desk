@@ -1,0 +1,36 @@
+# Dependencies and build output
+node_modules/
+dist/
+.cache/
+coverage/
+*.tsbuildinfo
+
+# Local runtime state and private content
+data/
+uploads/
+blobs/
+exports/
+imports/
+private-backups/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Credentials and machine-specific settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local archives and generated logs
+*.zip
+*.tgz
+*.log

@@ -1,0 +1,8 @@
+{
+  "runtime": "typescript",
+  "platformVersion": 26,
+  "entry": "client/dist/index.html",
+  "name": "导演台 V2 预览",
+  "slug": "dao-yan-tai-v2-yu-lan",
+  "managedCronJobs": []
+}
