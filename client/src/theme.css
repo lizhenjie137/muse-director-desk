@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "tailwindcss-safe-area";
+
+@theme {
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+  --text-3xl: 30px;
+  --text-3xl--line-height: 36px;
+  /* 只用设备本地衬线字体：不从 Google Fonts 等外部地址加载字体，
+     避免用户网络访问不到该地址时整页被渲染阻塞、预览打不开。 */
+  --font-display: "Songti SC", "STSong", "Noto Serif SC", "SimSun", "宋体", serif;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #ece7dd;
+  --surface: #f7f3ea;
+  --surface2: #e3dccb;
+  --text: #23211c;
+  --dim: #6f6a5c;
+  --border: #cfc7b4;
+  --accent: #c2402a;
+  --accent-soft: #f3d9d2;
+  --amber: #b97e22;
+  --amber-soft: #f0e3c2;
+  --ink: #17181c;
+  --ink-text: #ece7dd;
+  --radius: 10px;
+  --space-surface: var(--surface);
+  --space-surface-alt: var(--surface2);
+  --space-muted: var(--dim);
+  --space-border: var(--border);
+  --space-accent: var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17181c;
+    --surface: #1f2126;
+    --surface2: #26282f;
+    --text: #ece7dd;
+    --dim: #9b968a;
+    --border: #3a3d45;
+    --accent: #e05a3a;
+    --accent-soft: #40231c;
+    --amber: #d99a3d;
+    --amber-soft: #3d3520;
+    --ink: #101114;
+    --ink-text: #ece7dd;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transform: rotate(-2deg);
+}
+
+.frame-dashed {
+  border: 1.5px dashed var(--amber);
+  background: color-mix(in srgb, var(--amber) 7%, transparent);
+}
+
+/* 缺项导航跳达后的目标高亮：描边脉冲，不改变布局 */
+.flash-target {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+  animation: flash-pulse 0.7s ease-in-out 3;
+}
+
+@keyframes flash-pulse {
+  0%, 100% { outline-color: var(--accent); }
+  50% { outline-color: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flash-target { animation: none; }
+}
